@@ -1,0 +1,56 @@
+<html>
+<body>
+<h1>hello $name</h1>
+
+#foreach($aa in $a)
+    <a href="http://www.baidu.com">$aa</a>
+#end
+
+#foreach($bb in $b)
+    <h3>$bb</h3>
+#end
+
+#set($a = "000")
+$a
+
+<h1>$user.name</h1>
+<h1>${user.age}</h1>
+
+#set($user.name = "lili")
+<h1>$user.name</h1>
+
+$user.setName("lilili")
+<h1>$user.name</h1>
+
+$user.name.length()
+
+姓名：<input id="name" name="name" value="$user.name">
+性别：<input id="six" name="six" value="$!user.six">
+
+#if($user.name)
+    $user.name.length()
+#end
+
+#set($c = 2)
+#if($c == 1)
+    aha
+#else
+    11
+#end
+<br />
+#set($map = {"a":1, "b":2})
+$map
+
+#[[
+    #set($map = {"a":1, "b":2})
+    $map
+]]#
+
+###parse("a.html")
+
+#macro(d)
+    <tr><td>$!bodyContent</td></tr>
+#end
+#@d()hello #end
+</body>
+</html>
